@@ -32,7 +32,7 @@ def upload_data(request):
             # print(uploaded_file,"Fileeee")
             companies_file = csv.reader(decode_utf8(uploaded_file.file))
             next(companies_file)
-            count = 0
+            # count = 0
             for line in companies_file:
                 company_number, name, domain, year_founded, industry, size_range, \
                     locality, country, linkedin_url, current_employee_estimate, \
@@ -51,9 +51,9 @@ def upload_data(request):
                     current_employee_estimate=current_employee_estimate,
                     total_employee_estimate=total_employee_estimate
                 )
-                count +=1
-                if count == 10 :
-                    break
+                # count +=1
+                # if count == 10 :
+                #     break
             return render(request, 'upload_data.html')
         else:
             print(form.errors)
